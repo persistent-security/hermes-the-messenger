@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "messenger": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

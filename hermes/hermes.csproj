@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+	  
+	  <Platforms>AnyCPU;x64</Platforms>
+	  <SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+
+	<PropertyGroup Label="Configuration">
+		<DesktopCompatible>true</DesktopCompatible>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<LangVersion>10</LangVersion>
+		<CsWinRTEmbedded>true</CsWinRTEmbedded>
+		<CsWinRTWindowsMetadata>10.0.19041.0</CsWinRTWindowsMetadata>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<CsWinRTIncludes>
+			CppwinrtComponent;
+			Microsoft.Windows.PushNotifications;
+			Microsoft.Windows.ApplicationModel.DynamicDependency;
+			Windows.Management.Deployment;
+			Microsoft.Windows.ApplicationModel;
+			Microsoft.Windows.ApplicationModel.WindowsAppRuntime;
+			Windows.Foundation;
+		</CsWinRTIncludes>
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.3.230502000" />
+    <PackageReference Include="System.IO.Packaging" Version="7.0.0" />
+  </ItemGroup>
+	<Target Name="_RemoveFrameworkReferences" BeforeTargets="_ConvertItems;_CalculateInputsForGenerateCurrentProjectAppxManifest">
+		<ItemGroup>
+			<FrameworkSdkReference Remove="@(FrameworkSdkReference)" Condition="$([System.String]::Copy('%(FrameworkSdkReference.SDKName)').StartsWith('Microsoft.WindowsAppRuntime.'))" />
+		</ItemGroup>
+	</Target>
+</Project>

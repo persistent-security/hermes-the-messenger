@@ -1,7 +1,7 @@
 # Hermes the messenger
 A PoC for achieving persistence via push notifications on Windows
 
-For more technical details and background read our blogpost here: 
+For more technical details and background read our blogpost here: https://www.persistent-security.net/post/beacon-on-demand-abusing-push-notifications-for-persistence
 
 
 
