@@ -53,4 +53,8 @@ send_notification(secret, app_id, tenant_id, channel_uri, "This is a notificatio
 ```
 
 # Demo
-https://github.com/persistent-security/hermes-the-messenger/assets/134269747/a1e68f32-d940-40b6-99ea-c54b5345e367
+
+
+
+https://github.com/persistent-security/hermes-the-messenger/assets/134269747/1de3afdc-79dc-4de6-827b-6acba44f910b
+
